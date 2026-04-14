@@ -36,7 +36,7 @@ A Python bot that automates the fishing minigame using OpenCV template matching 
 pip install -r requirements.txt
 ```
 
-### 2. Configure `config.ini`
+### 2. Configure `config.ini` - Might not work for all stick with 1080 if 2k and 4k did not work.
 
 | Setting | Options | Default | Description |
 |---|---|---|---|
