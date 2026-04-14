@@ -1,0 +1,66 @@
+==============================================================
+  Blue Protocol: Star Resonance — Auto Fishing Bot
+  Configuration Guide  |  by bazzy22  |  v2.0
+==============================================================
+
+QUICK SETUP — config.ini
+─────────────────────────
+All user-editable settings are now in config.ini (not main.py).
+
+  [Settings]
+  resolution       = 1080    ← your monitor: 1080 | 2k | 4k
+  bite_timeout     = 30      ← seconds before re-casting if no bite
+  cooldown_seconds = 1.5     ← min seconds between A/D key presses
+
+
+RESOLUTION OPTIONS
+──────────────────
+  1080  →  1920 x 1080  (default, fullscreen / borderless)
+  2k    →  2560 x 1440
+  4k    →  3840 x 2160
+
+All screen coordinates are auto-scaled from the 1080p baseline.
+The game MUST be fullscreen or borderless windowed.
+
+
+CUSTOM RESOLUTION / FINE-TUNING (advanced)
+────────────────────────────────────────────
+If auto-scaling doesn't line up perfectly (e.g. game has letterboxing
+or a non-standard layout), you can hand-tune coordinates in main.py
+inside the  _BASE_COORDS  dictionary at the top of the file.
+
+Use get_coords.py to find pixel positions on your screen:
+  python get_coords.py
+
+Variables you may need to adjust in _BASE_COORDS:
+
+  FISHING_MONITOR_REGION  — (x, y, w, h) region covering the entire
+                             fishing minigame UI (arrows, tension bar).
+
+  CAST_POINT              — (x, y) where the bot clicks to cast.
+
+  TENSION_BAR_REGION      — (x, y, w, h) tiny region INSIDE the capture
+                             that covers the tension bar color pixel.
+
+  ARROW_REGION            — (x, y, w, h) INSIDE the capture where
+                             left/right arrows appear.
+
+  EXIT_POINT              — (x, y) of the OK/Exit button after a catch.
+
+  FISHING_ROD_REGION      — (x, y, w, h) covering the rod icon/hotbar.
+
+  FISHING_ROD_BUY         — (x, y) of the Buy button in the shop.
+
+
+ASSETS REQUIRED (screenshots from your own game)
+──────────────────────────────────────────────────
+  assets/exclamation_mark.png   — the ! that appears when a fish bites
+  assets/arrow_left.png         — left arrow during fish fight
+  assets/arrow_right.png        — right arrow during fish fight
+  assets/end.png                — the Fish Caught / Exit button
+  assets/fishing_rod_empty.png  — rod slot when durability = 0
+
+
+STOPPING THE BOT
+────────────────
+Press Ctrl+C in the terminal at any time.
